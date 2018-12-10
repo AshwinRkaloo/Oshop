@@ -39,11 +39,12 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" routerLink="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ user.displayName}} 's AC
+                                    <!-- {{ auth.user.displayName}} 's AC --> My Acc
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <ng-template #anonymousUser><a class="dropdown-item" routerLink="/login">Log In</a></ng-template>
-                                    <a *ngIf="auth.user$ | async as user; else anonymousUser" class="dropdown-item" (click)="logout()">Log Out </a>                                              
+                                    <a *ngIf="auth.user$ | async as user; else anonymousUser" class="dropdown-item" (click)="logout()">Log Out </a> 
+                                    <a *ngIf="auth.user$ | async as user" class="dropdown-item" (click)="logout()">Manage orders and products</a>                                             
                                 </div>
                             </li>                            
                         </ul>
